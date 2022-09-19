@@ -2,7 +2,7 @@
 
 DOCKER_SCAN_SUGGEST=false docker build -t tests .
 
-docker run --name tests_run --network $network tests pytest --browser $browser -n $threads
+docker run --name tests_run --network $network tests pytest --alluredir=allure_results --browser $browser -n $threads
 
 docker cp tests_run:/app/allure-report .
 

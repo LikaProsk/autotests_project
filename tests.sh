@@ -6,6 +6,6 @@ docker run --name tests_run --network $network tests pytest --browser $browser -
 
 docker cp tests_run:/app/allure-report .
 
-allure generate allure-report
+allure generate allure_results
 
 docker rm tests_run

@@ -11,7 +11,7 @@ from selenium.webdriver.firefox.service import Service as FFService
 def pytest_addoption(parser):
     parser.addoption("--url", action="store", default="https://ozon.ru", help="url сайта")
     parser.addoption("--browser", action="store", default="chrome", help="браузер для запуска")
-    parser.addoption("--executor", action="store", default="127.0.0.1")
+    parser.addoption("--executor", action="store", default="selenoid")
     parser.addoption("--drivers", action="store", default="drivers", help="путь до webdriver")
 
 

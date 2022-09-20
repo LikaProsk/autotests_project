@@ -1,5 +1,3 @@
-from time import sleep
-
 import allure
 
 from helpers.webdriver_helper import WebDriverHelper
@@ -44,3 +42,6 @@ class HeaderObject:
     def open_orderlist(self):
         self.helper.click_element_with_waiting(self.header_elements.BUTTON_ORDERLIST)
 
+    @allure.step('Нажатие на кнопку premium')
+    def click_premium_button(self):
+        self.helper.click_element_with_waiting(self.header_elements.MENU_ELEMENTS.get('Premium'))

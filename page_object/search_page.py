@@ -1,5 +1,3 @@
-from time import sleep
-
 import allure
 
 from page_elements.search_page import SearchPage

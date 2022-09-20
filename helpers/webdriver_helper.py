@@ -10,7 +10,7 @@ class WebDriverHelper:
         try:
             WebDriverWait(self.web_driver, 10).until(EC.visibility_of_element_located(locator))
             return True
-        except:
+        except TimeoutError:
             return False
 
     def get_elements(self, locator):

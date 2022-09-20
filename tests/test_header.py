@@ -16,5 +16,3 @@ class TestHeader:
         header = HeaderObject(web_driver)
         header.click_catalog_button()
         header.check_catalog_menu_element()
-
-

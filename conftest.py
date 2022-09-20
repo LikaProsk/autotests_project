@@ -1,16 +1,17 @@
 import os
+import pickle
+
 import allure
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromiumService
 from selenium.webdriver.firefox.service import Service as FFService
-from selenium.webdriver.chrome.options import Options
 
 
 def pytest_addoption(parser):
     parser.addoption("--url", action="store", default="https://ozon.ru", help="url сайта")
     parser.addoption("--browser", action="store", default="chrome", help="браузер для запуска")
-    parser.addoption("--executor", action="store", default="selenoid")
+    parser.addoption("--executor", action="store", default="127.0.0.1")
     parser.addoption("--drivers", action="store", default="drivers", help="путь до webdriver")
 
 
@@ -42,6 +43,10 @@ def web_driver(request, url):
     request.addfinalizer(driver.close)
 
     driver.get(url)
+    pickle.dump(driver.get_cookies(), open("cookies.pkl", "wb"))
+    cookies = pickle.load(open("cookies.pkl", "rb"))
+    for cookie in cookies:
+        driver.add_cookie(cookie)
     driver.url = url
 
     return driver

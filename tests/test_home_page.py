@@ -13,12 +13,12 @@ class TestHomePage:
         home_page_object.check_block_promo_elements()
 
     @allure.title('Проверка наличия элементов блока авторизации')
-    def test_checking_for_block_promo_items(self, web_driver):
+    def test_checking_for_block_auth_items(self, web_driver):
         home_page_object = HomePageObject(web_driver)
         home_page_object.check_block_auth_elements()
 
     @allure.title('Проверка открытия произвольного товара')
-    def test_checking_for_block_promo_items(self, web_driver):
+    def test_open_random_product(self, web_driver):
         home_page_object = HomePageObject(web_driver)
         product_page_object = ProductPageObject(web_driver)
         product_name = home_page_object.open_randon_product()

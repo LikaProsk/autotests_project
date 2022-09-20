@@ -5,7 +5,7 @@ from page_object.orderlist_page import OrderListPageObject
 
 
 @allure.epic('Проверка списка заказов')
-class TestSearch:
+class TestOrderList:
 
     @allure.title('Проверка открытия списка заказов неавторизованным пользователем')
     def test_open_orders_with_unauthorized_user(self, web_driver):

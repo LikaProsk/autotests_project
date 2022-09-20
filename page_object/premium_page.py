@@ -12,7 +12,7 @@ class PremiumPageObject(HeaderObject):
 
     @allure.step('Проверка наличия элементов блока лендинга премиум')
     def check_block_premium_elements(self):
-        self.helper.check_elements(self.premium_page_elements.PREMIUM_LANDING)
+        self.helper.check_elements(self.premium_page_elements.PREMIUM_LANDING.values())
 
     @allure.step('Проверка текста блока лендинга премиум')
     def check_text_lending(self, list_text: list):

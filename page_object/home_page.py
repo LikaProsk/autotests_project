@@ -14,11 +14,11 @@ class HomePageObject(HeaderObject):
 
     @allure.step('Проверка наличия элементов блока промокод')
     def check_block_promo_elements(self):
-        self.helper.check_elements(self.home_elements.BLOCK_PROMO)
+        self.helper.check_elements(self.home_elements.BLOCK_PROMO.values())
 
     @allure.step('Проверка наличия элементов блока авторизации')
     def check_block_auth_elements(self):
-        self.helper.check_elements(self.home_elements.BLOCK_PROMO)
+        self.helper.check_elements(self.home_elements.BLOCK_PROMO.values())
 
     @allure.step('Проверка наличия товаров')
     def check_product_elements(self):

@@ -37,7 +37,7 @@ pytest ./tests/ --alluredir=<Дериктория куда складывают�
 Откройте к командной строке проект и выполните команды
 
 ```
-DOCKER_SCAN_SUGGEST=false docker build -t tests .`
+DOCKER_SCAN_SUGGEST=false docker build -t tests .
 docker run --env url=<Url запуска тестов> --env browser=<Браузер для запуска> --name tests_run --network <Подключение контейнера для прогона тестов. Например selenoid> tests \
  && docker cp tests_run:/app/allure-report . \
  && allure serve allure-report

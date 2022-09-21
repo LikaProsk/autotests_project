@@ -13,7 +13,7 @@ class OrderListPageObject(HeaderObject):
     @allure.step('Проверкак открытия заказов неавторизованным пользователем')
     def check_unauthorized(self):
         self.open_orderlist()
-        text = self.helper.get_text_element(self.orderlist_elements.TEXT_UNAUTHORIZED)
+        text = self._get_text_element(self.orderlist_elements.TEXT_UNAUTHORIZED)
         assert text == 'Вы не авторизованы', 'Текущий текст не совпадает с ожидаемуму.\n' \
                                              'Ожидалось: Вы не авторизованы\n' \
                                              f'Фактический результат: {text}'

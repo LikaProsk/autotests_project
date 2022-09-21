@@ -12,7 +12,7 @@ class ProductPageObject(HeaderObject):
 
     @allure.step('Проверка заголовка товара')
     def check_product_title(self, title):
-        product_title = self.helper.get_text_element(self.product_elements.PRODUCT_TITLE)
+        product_title = self._get_text_element(self.product_elements.PRODUCT_TITLE)
         assert product_title == title, 'Текущий заголовок страницы товара не совпадает с ожидаемуму.\n' \
                                        f'Ожидалось: {title}\n' \
                                        f'Фактический результат: {product_title}'

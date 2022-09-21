@@ -12,7 +12,7 @@ class SearchPageObject(HeaderObject):
 
     @allure.step('Проверка результатов поиска')
     def check_search(self, search_text: str):
-        products = self.helper.get_elements(self.search_elements.PRODUCTS_NAME)
+        products = self._get_elements(self.search_elements.PRODUCTS_NAME)
         if len(products):
             for product in products:
                 product_name = product.text

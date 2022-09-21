@@ -17,7 +17,7 @@ class CategoryPageObject(HeaderObject):
 
     @allure.step('Проверка заголовка категории')
     def check_title_category(self, title):
-        page_title = self.helper.get_text_element(self.category_elements.TITLE_CATEGORY)
+        page_title = self._get_text_element(self.category_elements.TITLE_CATEGORY)
         assert page_title == title, 'Текущий заголовок категории не совпадает с ожидаемуму.\n' \
                                     f'Ожидалось: {title}\n' \
                                     f'Фактический результат: {page_title}'
